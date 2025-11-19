@@ -1,0 +1,3 @@
+MOV AX, 2244H
+NEG AX
+RET

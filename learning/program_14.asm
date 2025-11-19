@@ -1,0 +1,3 @@
+MOV AX, 887AH
+XOR AX, AX
+RET

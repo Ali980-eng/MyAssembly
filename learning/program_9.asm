@@ -1,0 +1,5 @@
+C EQU 10
+K EQU 87H
+MOV BL, K
+MOV AH, C
+RET

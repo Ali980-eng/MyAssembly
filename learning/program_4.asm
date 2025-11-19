@@ -1,0 +1,4 @@
+MOV SI, 1
+MOV AL, [SI + 1]
+MOV BX, [SI + 2]
+RET
