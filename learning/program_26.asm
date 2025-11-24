@@ -1,0 +1,6 @@
+MOV AL, 3
+SUB AL, 6
+MOV AL, 7
+SBB AL, 6
+DEC AL
+RET

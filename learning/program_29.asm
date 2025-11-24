@@ -1,0 +1,7 @@
+MOV AH, X
+ADD AH, X + 1
+ADC AH, X + 2
+MOV SUM, AH
+RET
+SUM DB ?
+X DB 20H, 16, 9

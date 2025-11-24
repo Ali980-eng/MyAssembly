@@ -1,0 +1,3 @@
+MOV AL, 3
+SUB AL, 6
+RET

@@ -1,0 +1,6 @@
+MOV AX, X
+ADD AX, X + 2
+MOV SUM, AX
+RET
+X DW 80H, 9
+SUM DW ?
