@@ -1,0 +1,14 @@
+MOV BX, OFFSET N
+MOV CL, 02H
+MOV DX, [BX]
+JMP L1
+LS:
+    MOV DX, AX
+L1:
+    ADD BX, 2
+    MOV AX, [BX]
+    CMP DX, AX
+    JB LS
+    LOOP L1
+HLT
+N DW 100H, 50H, 250H, 30H

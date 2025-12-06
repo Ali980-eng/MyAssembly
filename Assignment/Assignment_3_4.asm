@@ -1,0 +1,18 @@
+MOV SI, OFFSET X
+MOV DI, OFFSET Y
+MOV CX, 5H
+L1:
+    MOV AL, [SI]
+    MOV DL, [DI]
+    PUSH AX
+    PUSH DX
+    POP AX
+    POP DX
+    MOV [SI], AL
+    MOV [DI], DL
+    INC SI
+    INC DI
+LOOP L1
+HLT
+X DB 88H, 10H, 22H, 0FFH, 0BBH
+Y DB 91H, 9EH, 2FH, 0B9H, 0A7H

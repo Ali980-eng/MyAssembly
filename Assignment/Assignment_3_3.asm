@@ -1,0 +1,15 @@
+MOV CL, 4H
+MOV BX, OFFSET X
+MOV DI, OFFSET Y
+L1:
+    MOV AL, [BX]
+    MOV AH, [DI]
+    XCHG AH, AL
+    MOV [BX], AH
+    MOV [DI], AL
+    INC BX
+    INC DI    
+LOOP L1
+HLT
+X DB 8AH, 66H, 77H, 89H
+Y DB 87H, 9BH, 7FH, 99H
