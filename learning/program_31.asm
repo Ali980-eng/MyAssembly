@@ -1,0 +1,6 @@
+MOV AL, 1
+ADD AL, 2
+JMP L1
+ADD AL, 3
+L1: ADD AL, 1
+RET
