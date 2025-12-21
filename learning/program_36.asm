@@ -1,0 +1,11 @@
+MOV SI, 0
+L1:
+MOV AL, X[SI]
+XCHG AL, Y[SI]
+MOV X[SI], AL
+INC SI
+CMP SI, 3
+JB L1
+RET
+X DB 1, 2, 3
+Y DB 6, 7, 8

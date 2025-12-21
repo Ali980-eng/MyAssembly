@@ -1,0 +1,14 @@
+START:
+    MOV AX, 1
+    JMP POWER
+POWER:
+    INC CX
+    MOV BX, NUM
+    MUL BX
+    CMP CL, PN
+    JNZ POWER
+    JMP END
+END:
+RET
+PN DB 5H
+NUM DW 0002H
