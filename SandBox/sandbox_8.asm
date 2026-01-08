@@ -1,0 +1,34 @@
+DATA SEGMENT
+    Z DB 66H, 78H, 33H
+DATA ENDS
+
+CODE SEGMENT
+  ASSUME CS:CODE, DS:DATA
+    
+  SETDL_3 PROC
+    OR DL, 00000100B
+    RET
+  SETDL_3 ENDP
+
+  RESETDL_4 PROC
+    AND DL, 11110111B
+    RET
+  RESETDL_4 ENDP
+
+  MAIN:
+    MOV AX, DATA
+    MOV DS, AX
+    MOV DI, OFFSET Z
+    MOV CX, 3
+    L1:
+      MOV DL, [DI]      
+      CALL SETDL_3     
+      CALL RESETDL_4    
+      MOV [DI], DL    
+      INC DI
+    LOOP L1           
+    MOV AH, 4CH
+    INT 21H
+     
+CODE ENDS
+END MAIN

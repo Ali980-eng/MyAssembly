@@ -1,0 +1,15 @@
+ORG 100H
+  LEA SI, X
+  LEA DI, Y
+  MOV CX, 3
+  REP MOVSB
+  MOV CX, 3
+  L1:
+    MOV DL, [DI - 1]
+    MOV DH, [SI - 1]
+    DEC DI
+    DEC SI
+  LOOP L1
+RET
+X DB 1, 2, 3
+Y DB 3 DUP(5)

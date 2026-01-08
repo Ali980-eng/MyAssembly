@@ -1,0 +1,31 @@
+DATA SEGMENT
+  X DB 'ABC'
+  Y DB 3 DUP(?)    
+DATA ENDS
+
+CODE SEGMENT
+  ASSUME CS:CODE, DS:DATA
+  
+  MYTEST PROC
+    MOV CX, 3
+    L2:
+      MOV DL, [DI - 1]
+      DEC DI
+    LOOP L2
+    RET
+  MYTEST ENDP 
+    
+  MAIN:
+    MOV AX, DATA
+    MOV DS, AX
+    MOV ES, AX
+    MOV SI, OFFSET X
+    MOV DI, OFFSET Y
+    MOV CX, 3
+    L1: MOVSB
+    LOOP L1
+    CALL MYTEST
+    INT 21H
+     
+CODE ENDS
+END MAIN
