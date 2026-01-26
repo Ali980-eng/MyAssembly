@@ -1,0 +1,16 @@
+ORG 100H
+  MOV AL, 'a'
+  MOV CX, 3
+  MOV DI, OFFSET X
+  L1:
+    STOSB
+    INC AL
+  LOOP L1
+  MOV CX, 3
+  MOV DI, OFFSET X
+  L2:
+    MOV DL, [DI]
+    INC DI
+  LOOP L2
+RET
+X DB 3 DUP(' ')
